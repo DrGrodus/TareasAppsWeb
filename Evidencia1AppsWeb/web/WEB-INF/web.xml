@@ -4,9 +4,17 @@
         <servlet-name>RegistroDeUsuario</servlet-name>
         <servlet-class>com.example.model.RegistroDeUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetallesLibro</servlet-name>
+        <servlet-class>com.example.web.DetallesLibro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegistroDeUsuario</servlet-name>
         <url-pattern>/RegistroDeUsuario.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetallesLibro</servlet-name>
+        <url-pattern>/DetallesLibro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
