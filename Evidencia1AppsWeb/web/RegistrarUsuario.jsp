@@ -13,7 +13,7 @@
     </head>
     <body>
         <h2>Registrate</h2>
-        <form method="POST" action="">
+        <form method="POST" action="RegistroDeUsuario.do">
             <label>Nombre: </label><br>
             <input type="text" name="campoNombre"><br><br>
             <label>Apellidos: </label><br>
