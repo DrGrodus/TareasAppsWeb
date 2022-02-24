@@ -8,6 +8,10 @@
         <servlet-name>DetallesLibro</servlet-name>
         <servlet-class>com.example.web.DetallesLibro</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CarritoDetalles</servlet-name>
+        <servlet-class>com.example.model.CarritoDetalles</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegistroDeUsuario</servlet-name>
         <url-pattern>/RegistroDeUsuario.do</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>DetallesLibro</servlet-name>
         <url-pattern>/DetallesLibro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarritoDetalles</servlet-name>
+        <url-pattern>/CarritoDetalles</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

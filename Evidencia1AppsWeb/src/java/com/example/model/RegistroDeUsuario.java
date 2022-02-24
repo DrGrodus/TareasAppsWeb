@@ -7,6 +7,7 @@ package com.example.model;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -72,8 +73,15 @@ public class RegistroDeUsuario extends HttpServlet {
         PrintWriter out = response.getWriter();
         String usuario = request.getParameter("campoNombre");
         String contra = request.getParameter("campoApellidos");
-        request.setAttribute("usuario", usuario);
-        request.setAttribute("contra", contra);
+        
+        Cookie cookieU = new Cookie("usuario", usuario);
+        Cookie cookieC = new Cookie("contra", contra);
+        
+        response.addCookie(cookieU);
+        response.addCookie(cookieC);
+        
+//        request.setAttribute("usuario", usuario);
+//        request.setAttribute("contra", contra);
 
         out.println("<!DOCTYPE html>\n"
                 + "<html lang='es'>\n"

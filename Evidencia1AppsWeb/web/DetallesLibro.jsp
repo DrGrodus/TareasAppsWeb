@@ -15,9 +15,10 @@
         <form method="POST" action="index.html">
             <input type="submit" value="Volver a inicio">
         </form>
+        
         <p>Titulo Libro</p>
         <img src="img/Libro1.png" alt="portadaLibro">
-        <form method="POST" action="">
+        <form method="POST" action="CarritoDetalles">
             <input type="submit" value="comprar">
         </form>
         <h3>Descripción</h3>
