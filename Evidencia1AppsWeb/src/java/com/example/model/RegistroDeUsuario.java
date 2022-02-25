@@ -11,6 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -74,14 +75,19 @@ public class RegistroDeUsuario extends HttpServlet {
         String usuario = request.getParameter("campoNombre");
         String contra = request.getParameter("campoApellidos");
         
+        HttpSession session = request.getSession();
         Cookie cookieU = new Cookie("usuario", usuario);
-        Cookie cookieC = new Cookie("contra", contra);
         
+        cookieU.setMaxAge(30*60);
         response.addCookie(cookieU);
-        response.addCookie(cookieC);
+        Cookie[] cookies = request.getCookies();
         
-//        request.setAttribute("usuario", usuario);
-//        request.setAttribute("contra", contra);
+        for(int i = 0; i< cookies.length; i++){
+            Cookie cookie = cookies[i];
+            if(cookie.getName().equals("usuario")){
+                
+            }
+        }
 
         out.println("<!DOCTYPE html>\n"
                 + "<html lang='es'>\n"

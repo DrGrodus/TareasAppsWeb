@@ -70,7 +70,7 @@ public class DetallesLibro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-
+        
         String P1 = request.getParameter("P1");
         String P2 = request.getParameter("P2");
         String P3 = request.getParameter("P3");

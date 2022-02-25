@@ -26,7 +26,6 @@
             <input type="text" name="campoEstado"><br><br>
             
             <input type="submit" value="Registrar">
-
         </form>
     </body>
 </html>

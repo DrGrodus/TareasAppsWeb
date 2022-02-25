@@ -4,6 +4,17 @@
         <servlet-name>RegistroDeUsuario</servlet-name>
         <servlet-class>com.example.model.RegistroDeUsuario</servlet-class>
     </servlet>
+    
+    <context-param>
+        <param-name>AdminEmail</param-name>
+        <param-value>AdminEmail@email.com</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>AdminClave</param-name>
+        <param-value>1234</param-value>
+    </context-param>
+    
     <servlet>
         <servlet-name>DetallesLibro</servlet-name>
         <servlet-class>com.example.web.DetallesLibro</servlet-class>
@@ -11,6 +22,10 @@
     <servlet>
         <servlet-name>CarritoDetalles</servlet-name>
         <servlet-class>com.example.model.CarritoDetalles</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CatalogoLibros</servlet-name>
+        <servlet-class>com.example.model.CatalogoLibros</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegistroDeUsuario</servlet-name>
@@ -23,6 +38,10 @@
     <servlet-mapping>
         <servlet-name>CarritoDetalles</servlet-name>
         <url-pattern>/CarritoDetalles</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CatalogoLibros</servlet-name>
+        <url-pattern>/CatalogoLibros</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
