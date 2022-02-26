@@ -8,6 +8,7 @@ import com.example.model.RegistroDeUsuario;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +38,7 @@ public class LogIn extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LogIn</title>");            
+            out.println("<title>Servlet LogIn</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LogIn at " + request.getContextPath() + "</h1>");
@@ -72,22 +73,29 @@ public class LogIn extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String usuario = request.getParameter("campoUsuario");
         String contra = request.getParameter("campoContra");
-        
-        
+
         RegistroDeUsuario registroDeUsuario = new RegistroDeUsuario();
         registroDeUsuario.doPost(request, response);
         Cookie[] cookies = request.getCookies();
-        
-        for(int i = 0; i< cookies.length; i++){
+        int bandera = 0;
+
+        for (int i = 0; i < cookies.length; i++) {
             Cookie cookie = cookies[i];
-            if(cookie.getValue().equals("usuario") && cookie.getValue().equals("contra")){
-                response.sendRedirect("CatalogoLibros.do");
-            } else{
-                response.sendRedirect("RegistrarUsuario.jsp");
+            if (cookie.getValue().equals(usuario)) {
+                bandera++;
+            } else if (cookie.getValue().equals(contra)) {
+                bandera++;
             }
+        }
+        if (bandera == 2) {
+            RequestDispatcher view = request.getRequestDispatcher("CatalogoLibros.do");
+            request.setAttribute("user", usuario);
+            response.sendRedirect("CatalogoLibros.do");
+        } else {
+            response.sendRedirect("RegistrarUsuario.jsp");
         }
     }
 

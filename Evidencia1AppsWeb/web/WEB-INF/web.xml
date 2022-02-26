@@ -38,7 +38,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DetallesLibro</servlet-name>
-        <url-pattern>/DetallesLibro</url-pattern>
+        <url-pattern>/DetallesLibro.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CarritoDetalles</servlet-name>

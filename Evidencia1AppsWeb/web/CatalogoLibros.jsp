@@ -4,6 +4,7 @@
     Author     : eber
 --%>
 
+<%@page import="com.example.model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +16,7 @@
 
         <p>Cuenta: 
             <%
-                
+                out.println(request.getAttribute("user"));
             %>
         </p>
         <a href="CarritoDetalles"><img src="img/Carrito.png"></a> <!-- <a href="URL DESTINO"><img src="URL DE LA IMAGEN"></a> -->
