@@ -10,13 +10,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form method="POST" action="">
+        <form method="POST" action="LogIn">
             <img src="img/LibroLogo.png" alt="Logo de Librería García">
             <h1>Librería García</h1>
             <label>Usuario: </label><br>
             <input type="text" name="campoUsuario" placeholder="Usuario"><br><br>
             <label>Contraseña: </label><br>
-            <input type="text" name="campoContra" placeholder="Contraseña"><br><br>
+            <input type="password" name="campoContra" placeholder="Contraseña"><br><br>
             <input type="submit" value="Iniciar sesión"><br><br>
         </form>
         <p><a title="registro" href="http://localhost:8090/Evidencia1AppsWeb/RegistrarUsuario.jsp">¿No tienes cuenta? Registraste aquí</a></p>
@@ -26,20 +26,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <form method="POST" action="DetallesLibro">
                 <article>
                     <h3>Investigación</h3>
-                    <img src="img/Libro1.png" alt="Libro num1">
-                    <input type="submit" value="Comprar" name="P1"><br>
+                    <img src="img/Libro1.png" alt="Libro num1"><br>
+                    <input type="submit" value="Comprar" name="P1" disabled="true">
+                    <label><b>Inicia sesión para comprar</b></label><br>
                 </article><br>
 
                 <article>
                     <h3>Monstruos</h3>
-                    <img src="img/Libro2.png" alt="Libro num2">
-                    <input type="submit" value="Comprar" name="P2"><br>
+                    <img src="img/Libro2.png" alt="Libro num2"><br>
+                    <input type="submit" value="Comprar" name="P2" disabled="true">
+                    <label><b>Inicia sesión para comprar</b></label><br>
                 </article><br>
 
                 <article>
                     <h3>Robots</h3>
-                    <img src="img/Libro3.png" alt="Libro num3">
-                    <input type="submit" value="Comprar"  name="P3"><br>
+                    <img src="img/Libro3.png" alt="Libro num3"><br>
+                    <input type="submit" value="Comprar"  name="P3" disabled="true">
+                    <label><b>Inicia sesión para comprar</b></label><br>
                 </article><br>
             </form>
         </section>

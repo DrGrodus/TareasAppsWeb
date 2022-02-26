@@ -4,6 +4,8 @@
  */
 package com.example.model;
 
+import com.example.model.RegistroDeUsuario;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -11,13 +13,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author eber
  */
-public class RegistroDeUsuario extends HttpServlet {
+public class LogIn extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +37,10 @@ public class RegistroDeUsuario extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegistroDeUsuario</title>");
+            out.println("<title>Servlet LogIn</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegistroDeUsuario at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LogIn at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -71,48 +72,22 @@ public class RegistroDeUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        String usuario = request.getParameter("campoNombre");
-        String contra = request.getParameter("campoApellidos");
-
-        HttpSession session = request.getSession();
-        session.setAttribute("usuario", usuario);
-        session.setAttribute("contra", contra);
         
-        request.setAttribute("usuario", usuario);
-        request.setAttribute("contra", contra);
-
-        if (usuario != null && contra != null) {
-            Cookie cookieU = new Cookie("usuario", usuario);
-            Cookie cookieC = new Cookie("contra", contra);
-
-            cookieU.setMaxAge(30 * 60);
-            response.addCookie(cookieU);
-            response.addCookie(cookieC);
-
-            out.println("<!DOCTYPE html>\n"
-                    + "<html lang='es'>\n"
-                    + "<head>\n"
-                    + "<title>Usuario registrado!</title>\n"
-                    + "<meta charset=\"UTF-8\">\n"
-                    + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-                    + "</head>\n"
-                    + "<body>\n"
-                    + "<p>Muchas gracias por registrarse!"
-                    + "</p>"
-                    + "<p>"
-                    + "Su usuario es: "
-                    + usuario + "\n"
-                    + "</p>"
-                    + "<p>"
-                    + "Y su contraseña es: "
-                    + contra + "\n"
-                    + "</p>"
-                    + "<p><a href=\"http://localhost:8090/Evidencia1AppsWeb/index.html\">Volver a inicio</a></p>"
-                    + "</body>\n"
-                    + "</html");
-        } else{
-            
+        String usuario = request.getParameter("campoUsuario");
+        String contra = request.getParameter("campoContra");
+        
+        
+        RegistroDeUsuario registroDeUsuario = new RegistroDeUsuario();
+        registroDeUsuario.doPost(request, response);
+        Cookie[] cookies = request.getCookies();
+        
+        for(int i = 0; i< cookies.length; i++){
+            Cookie cookie = cookies[i];
+            if(cookie.getValue().equals("usuario") && cookie.getValue().equals("contra")){
+                response.sendRedirect("CatalogoLibros.do");
+            } else{
+                response.sendRedirect("RegistrarUsuario.jsp");
+            }
         }
     }
 
