@@ -19,11 +19,11 @@
                 out.println(request.getAttribute("user"));
             %>
         </p>
-        <a href="CarritoDetalles"><img src="img/Carrito.png"></a> <!-- <a href="URL DESTINO"><img src="URL DE LA IMAGEN"></a> -->
+        <a href="Carrito.jsp"><img src="img/Carrito.png"></a> <!-- <a href="URL DESTINO"><img src="URL DE LA IMAGEN"></a> -->
 
         <section>
             <h3>Libros más populares</h3>
-            <form method="POST" action="DetallesLibro">
+            <form method="POST" action="DetallesLibro.do">
                 <article>
                     <h3>Investigación</h3>
                     <img src="img/Libro1.png" alt="Libro num1"><br>

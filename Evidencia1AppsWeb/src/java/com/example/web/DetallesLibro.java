@@ -86,6 +86,7 @@ public class DetallesLibro extends HttpServlet {
         }
         
         request.setAttribute("titulo", titulo);
+        response.sendRedirect("DetallesLibro.jsp");
         
     }
 

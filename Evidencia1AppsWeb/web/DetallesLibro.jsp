@@ -18,7 +18,7 @@
         
         <p>Titulo Libro</p>
         <img src="img/Libro1.png" alt="portadaLibro">
-        <form method="POST" action="CarritoDetalles">
+        <form method="POST" action="Carrito.jsp">
             <input type="submit" value="comprar">
         </form>
         <h3>Descripción</h3>
