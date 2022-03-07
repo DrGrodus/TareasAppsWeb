@@ -14,7 +14,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
         <b>El RFC es: <i>ABCD123456</i></b>
 
-        <form>
+        <form method="POST" action="MostrarRFC.jsp">
             <fieldset>
                 <legend>Escribe tu nombre</legend>
                 <label>Nombre: </label><br>
@@ -39,6 +39,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <label>Dia: </label><br>
                 <input type="text" name="dia" placeholder="13, 21, 30"><br>
             </fieldset>
+            <input type="submit" value="Generar">
         </form>
     </body>
 </html>
