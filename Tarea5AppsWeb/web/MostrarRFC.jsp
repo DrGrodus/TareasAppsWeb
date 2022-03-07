@@ -14,8 +14,28 @@
     <body>
         <h1>Generador de RFC</h1>
 
-        <b>El RFC es: 
-            <%  %>
+        <b>Tu RFC es: 
+            <%
+                String nombre       = request.getParameter("nombre"); nombre = nombre.toUpperCase();
+                String apellido1    = request.getParameter("apellido1"); apellido1 = apellido1.toUpperCase();
+                String apellido2    = request.getParameter("apellido2"); apellido2 = apellido2.toUpperCase();
+                
+                String anho         = request.getParameter("anho");
+                String mes          = request.getParameter("mes");
+                String dia          = request.getParameter("dia");
+                
+                String RFC = "";
+                
+                RFC = RFC.concat(apellido1.substring(0, 2));
+                RFC = RFC.concat(apellido2.substring(0,1));
+                RFC = RFC.concat(nombre.substring(0,1));
+                RFC = RFC.concat(anho);
+                RFC = RFC.concat(mes);
+                RFC = RFC.concat(dia);
+                
+                out.println(RFC);
+                
+            %>
         </b>
 
         <form method="POST" action="index.html">
