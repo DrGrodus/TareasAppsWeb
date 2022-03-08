@@ -8,10 +8,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Segundo JSP</h1>
+        <p>
+            <%
+                int num = (int)(Math.random()*10)+ 1;
+                int resultado = 1;
+                for(int i = 1;i<num;i++){
+                    resultado *= num;
+                    num--;
+                }
+                out.println("El factorial de: " + num + " es: " + resultado);
+            %>
+        </p>
     </body>
 </html>
