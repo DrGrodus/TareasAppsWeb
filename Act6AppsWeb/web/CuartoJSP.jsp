@@ -8,10 +8,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Cuatro JSP</h1>
+        <form action="index.html" method="post">
+            <input type="submit" value="Inicio">
+        </form>
+        <%! public String Factorial() {
+                int num = (int) (Math.random() * 10) + 1;
+                int valorOriginal = num;
+                int resultado = 1;
+                while (num >= 1) {
+                    resultado *= num;
+                    num--;
+                }
+                return "El factorial de: " + valorOriginal + " es: " + resultado;
+            }
+        %>
+        
+        <%= Factorial() %>
     </body>
 </html>
