@@ -13,15 +13,19 @@
     </head>
     <body>
         <h1>Segundo JSP</h1>
+        <form action="index.html" method="post">
+            <input type="submit" value="Inicio">
+        </form>
         <p>
             <%
-                int num = (int)(Math.random()*10)+ 1;
+                int num = (int) (Math.random() * 10) + 1;
+                int valorOriginal = num;
                 int resultado = 1;
-                for(int i = 1;i<num;i++){
+                while (num >= 1) {
                     resultado *= num;
                     num--;
                 }
-                out.println("El factorial de: " + num + " es: " + resultado);
+                out.println("El factorial de: " + valorOriginal + " es: " + resultado);
             %>
         </p>
     </body>
