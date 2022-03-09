@@ -15,6 +15,9 @@
     </head>
     <body>
         <h1>Primer JSP</h1>
+        <form action="index.html" method="post">
+            <input type="submit" value="Inicio">
+        </form>
         <p>
             <%= "Estamos a: " + LocalDate.now() + " y son las: " + LocalTime.now() %>
         </p>
