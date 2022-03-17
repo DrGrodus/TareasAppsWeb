@@ -57,7 +57,13 @@ public class ListaEmpleados extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        ArrayList<model.Empleado> empleados = new ArrayList<>();
+        empleados.add(new Empleado(1, "Paco", "Admin"));
+        empleados.add(new Empleado(2, "Lope", "Jefe"));
+        empleados.add(new Empleado(3, "Armando", "Conductor"));
+        request.setAttribute("empleados", empleados);
+        request.getRequestDispatcher("ListaEmpleados.jsp").forward(request, response);
     }
 
     /**
@@ -72,12 +78,6 @@ public class ListaEmpleados extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        ArrayList<model.Empleado> empleados = new ArrayList<>();
-        empleados.add(new Empleado(1, "Paco", "Admin"));
-        empleados.add(new Empleado(2, "Lope", "Jefe"));
-        empleados.add(new Empleado(3, "Armando", "Conductor"));
-        request.setAttribute("empleados", empleados);
-        request.getRequestDispatcher("ListaEmpleados.jsp").forward(request, response);
     }
 
     /**
