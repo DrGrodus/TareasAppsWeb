@@ -19,7 +19,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Poblacion</th>
+                    <th>Puesto</th>
                 </tr>
             </thead>
 
