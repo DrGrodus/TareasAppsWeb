@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Error Aritmetico</h1><h3>El resultado es indefinido</h3>
     </body>
 </html>
