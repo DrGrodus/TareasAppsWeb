@@ -89,7 +89,9 @@ public class ManejadorErrores extends HttpServlet {
                 break;
 
             //  error aritmetico?
-                
+            case "Ari":
+                int a = 1 /0;
+                break;
                 
             default:
                 System.out.println("je");
