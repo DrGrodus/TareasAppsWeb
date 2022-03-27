@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-    
     <error-page>
         <error-code>400</error-code>
         <location>/error/400.jsp</location>
     </error-page>
-    
     <error-page>
         <error-code>403</error-code>
         <location>/error/403.jsp</location>
     </error-page>
-    
     <error-page>
         <error-code>404</error-code>
         <location>/error/404.jsp</location>
     </error-page>
-    
     <error-page>
         <error-code>500</error-code>
         <location>/error/500.jsp</location>
     </error-page>
+    <error-page>
+        <exception-type>java.lang.ArithmeticException</exception-type>
+        <location>/error/aritmetico.jsp</location>
+    </error-page>
     
+    <servlet>
+        <servlet-name>ManejadorErrores</servlet-name>
+        <servlet-class>controller.ManejadorErrores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManejadorErrores</servlet-name>
+        <url-pattern>/ManejadorErrores</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
