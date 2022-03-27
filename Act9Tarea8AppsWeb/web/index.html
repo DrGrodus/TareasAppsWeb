@@ -10,6 +10,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Elige el error</h1>
+        <form action="ManejadorErrores" method="POST">
+            <select name="error" id="error">
+                <option value="400">Error 400</option>
+                <option value="403">Error 403</option>
+                <option value="404">Error 404</option>
+                <option value="500">Error 500</option>
+                <option value="">Error Aritmetico</option>
+            </select>
+            <input type="submit" value="enviar">
+        </form>
     </body>
 </html>
