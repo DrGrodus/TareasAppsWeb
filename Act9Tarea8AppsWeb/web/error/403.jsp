@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Error 403</h1><h3>Acceso Denegado</h3>
     </body>
 </html>
