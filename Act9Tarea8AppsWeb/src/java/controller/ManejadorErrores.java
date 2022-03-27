@@ -73,10 +73,12 @@ public class ManejadorErrores extends HttpServlet {
         switch (error) {
             case "400":
                 // bad request
+                response.sendError(Integer.parseInt(error));
                 break;
 
             case "403":
                 // forbidden access
+                response.sendError(Integer.parseInt(error));
                 break;
 
             case "404":
@@ -86,6 +88,7 @@ public class ManejadorErrores extends HttpServlet {
 
             case "500":
                 // internal server error
+                response.sendError(Integer.parseInt(error));
                 break;
 
             //  error aritmetico?
