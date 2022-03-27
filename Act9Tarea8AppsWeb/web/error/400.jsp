@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Error 400 </h1><h3>Bad Request </h3><p>Informacion no válida</p>
     </body>
 </html>
