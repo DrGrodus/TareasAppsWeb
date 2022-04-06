@@ -11,7 +11,7 @@ import model.Cuenta;
  * @author eber
  */
 public class Cliente {
-    
+
     private String nombre;
     private String apellidos;
     private String direccion;
@@ -22,17 +22,17 @@ public class Cliente {
     private Integer telefono;
     private String fechaNacimiento;
 
-    public Cliente(){
-        
+    Cuenta cuenta = new Cuenta();
+
+    public Cliente() {
+
     }
 
     public Cliente(String nombre, String ciudad) {
         this.nombre = nombre;
         this.ciudad = ciudad;
     }
-    
-    
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -104,6 +104,5 @@ public class Cliente {
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
-    
-    
+
 }
