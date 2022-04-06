@@ -16,10 +16,10 @@
         <form action="#" method="POST">
             <label>Numero de cuenta</label><br>
             <input type="text" name="numCuenta"><br>
-            
+
             <label>Numero de cliente</label><br>
             <input type="text" name="numCliente"><br>
-            
+
             <label>Tipo de cuenta</label><br>
             <select name="tipoCuenta" id="tipoCuenta">
                 <option value="">[Selecciona una opcion]</option>
@@ -27,11 +27,15 @@
                 <option value="opcion2">Opcion 2</option>
                 <option value="opcion3">Opcion 3</option>
             </select><br>
-            
+
             <label>Monto</label><br>
             <input type="text" name="monto"><br>
-            
+
             <input type="submit" value="Registrar cuenta">
+        </form>
+
+        <form action="MenuAdmin.jsp" method="POST">
+            <input type="submit" value="Volver al menu">
         </form>
     </body>
 </html>
