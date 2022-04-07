@@ -30,13 +30,13 @@
                     <td>Ciudad1</td>  <!-- Ciudad -->
                     <td>
                         <form action="Clientes" method="POST">
-                            <input type="submit" value="Ver cliente">
+                            <input type="submit" value="Ver cliente" name="detallesCliente">
                         </form>
                     </td>
 
                     <td>
                         <form action="Cuentas" method="POST">
-                            <input type="submit" value="Ver cuenta">
+                            <input type="submit" value="Ver cuenta" name="detallesCuenta">
                         </form>
                     </td>
                 </tr>

@@ -8,6 +8,18 @@
         <servlet-name>OpcionesAdmin</servlet-name>
         <servlet-class>model.OpcionesAdmin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Cuentas</servlet-name>
+        <servlet-class>web.Cuentas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OpcionesCliente</servlet-name>
+        <servlet-class>model.OpcionesCliente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Validador</servlet-name>
+        <servlet-class>web.Validador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Clientes</servlet-name>
         <url-pattern>/Clientes</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>OpcionesAdmin</servlet-name>
         <url-pattern>/OpcionesAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cuentas</servlet-name>
+        <url-pattern>/Cuentas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OpcionesCliente</servlet-name>
+        <url-pattern>/OpcionesCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Validador</servlet-name>
+        <url-pattern>/Validador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -28,6 +52,20 @@
         <role-name>Admin</role-name>
     </security-role>
     <security-role>
-        <role-name>Guest</role-name>
+        <role-name>Cliente</role-name>
     </security-role>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+    <!-- <security-constraint> -->
+        <!-- <web-resource-collection> -->
+            <!-- <web-resource-name>Recurso</web-resource-name> -->
+            <!-- <url-pattern>/Admin/*</url-pattern> -->
+            <!-- <http-method>GET</http-method> -->
+            <!-- <http-method>POST</http-method> -->
+        <!-- </web-resource-collection> -->
+        <!-- <auth-constraint> -->
+            <!-- <role-name>Admin</role-name> -->
+        <!-- </auth-constraint> -->
+    <!-- </security-constraint> -->
 </web-app>
