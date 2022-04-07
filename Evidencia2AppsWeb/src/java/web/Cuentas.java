@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author eber
  */
-public class Clientes extends HttpServlet {
+public class Cuentas extends HttpServlet {
 	boolean bandera = false;
 
     /**
@@ -35,10 +35,10 @@ public class Clientes extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Clientes</title>");            
+            out.println("<title>Servlet Cuentas</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Clientes at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Cuentas at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -72,13 +72,13 @@ public class Clientes extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
 
-        String detallesCliente = request.getParameter("detallesCliente");
+        String detallesCuenta = request.getParameter("detallesCuenta");
         // String altaCuenta = request.getParameter("altaCuenta");
         // String listaClientes = request.getParameter("listaClientes");
 
         while (!bandera) {
-            if (detallesCliente != null) {
-                request.getRequestDispatcher("DetallesCliente.jsp").forward(request, response);
+            if (detallesCuenta != null) {
+                request.getRequestDispatcher("DetallesCuenta.jsp").forward(request, response);
                 bandera = true;
             // } else if (altaCuenta != null) {
                 // request.getRequestDispatcher("AltaCuenta.jsp").forward(request, response);
