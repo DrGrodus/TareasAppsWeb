@@ -13,15 +13,17 @@
     </head>
     <body>
         <h1>Iniciar sesión</h1>
-        <form action="Menu.jsp" method="POST">
+        <form action="Validador" method="POST">
             <label>Usuario</label><br>
             <input type="text" name="usuario"><br>
             <label>Contraseña</label><br>
             <input type="password" name="password"><br>
             <input type="submit"><br>
+		</form>
+		
             <p> Enlaces temporales </p>
-            <a href="MenuAdmin.jsp">Menu de Admin</a><br><br>
+            <a href="Admin/MenuAdmin.jsp">Menu de Admin</a><br><br>
             <a href="MenuCliente.jsp">Menu de Cliente</a><br>
-        </form>
+        
     </body>
 </html>
