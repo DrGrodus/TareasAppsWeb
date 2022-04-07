@@ -22,7 +22,7 @@
 		</form>
 		
             <p> Enlaces temporales </p>
-            <a href="Admin/MenuAdmin.jsp">Menu de Admin</a><br><br>
+            <a href="MenuAdmin.jsp">Menu de Admin</a><br><br>
             <a href="MenuCliente.jsp">Menu de Cliente</a><br>
         
     </body>
