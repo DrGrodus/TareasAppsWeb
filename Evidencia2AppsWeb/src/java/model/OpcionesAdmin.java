@@ -83,8 +83,10 @@ public class OpcionesAdmin extends HttpServlet {
                 bandera = true;
             } else if (altaCuenta != null) {
                 request.getRequestDispatcher("AltaCuenta.jsp").forward(request, response);
+                bandera = true;
             } else if (listaClientes != null) {
                 request.getRequestDispatcher("ListaClientes.jsp").forward(request, response);
+                bandera = true;
             }
         }
         bandera = false;
