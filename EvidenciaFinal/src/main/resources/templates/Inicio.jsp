@@ -1,5 +1,12 @@
+<%-- 
+    Document   : Inicio
+    Created on : 6 may 2022, 21:40:40
+    Author     : eber
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inicio</title>

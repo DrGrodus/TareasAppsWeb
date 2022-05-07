@@ -1,8 +1,11 @@
+<%-- 
+    Document   : RegistrarUsuario
+    Created on : 6 may 2022, 21:40:51
+    Author     : eber
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,7 +13,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
         <h2>Registrate</h2>
-        <form method="POST" action="RegistroDeUsuario">
+        <form method="POST" action="RegistroUsuario">
             <label>Nombre: </label><br>
             <input type="text" name="campoNombre"><br><br>
             <label>Apellidos: </label><br>

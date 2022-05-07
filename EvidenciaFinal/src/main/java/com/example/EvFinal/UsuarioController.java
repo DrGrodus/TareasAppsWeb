@@ -81,8 +81,35 @@ public class UsuarioController {
     }
 
     @RequestMapping("/registro")
-    public String registrar() {
-        return "RegistrarUsuario";
+    public void registrar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<!DOCTYPE html>\n"
+                + "<html>\n"
+                + "    <head>\n"
+                + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+                + "        <title>Registro de usuario</title>\n"
+                + "    </head>\n"
+                + "    <body>\n"
+                + "        <h2>Registrate</h2>\n"
+                + "        <form method=\"POST\" action=\"RegistroDeUsuario.do\">\n"
+                + "            <label>Nombre: </label><br>\n"
+                + "            <input type=\"text\" name=\"campoNombre\"><br><br>\n"
+                + "            <label>Apellidos: </label><br>\n"
+                + "            <input type=\"text\" name=\"campoApellidos\"><br><br>\n"
+                + "            <label>Codigo postal: </label><br>\n"
+                + "            <input type=\"text\" name=\"campoCPostal\"><br><br>\n"
+                + "            <label>Ciudad: </label><br>\n"
+                + "            <input type=\"text\" name=\"campoCiudad\"><br><br>\n"
+                + "            <label>Estado: </label><br>\n"
+                + "            <input type=\"text\" name=\"campoEstado\"><br><br>\n"
+                + "            \n"
+                + "            <input type=\"submit\" value=\"Registrar\">\n"
+                + "        </form>\n"
+                + "    </body>\n"
+                + "</html>");
+        //return "RegistrarUsuario";
     }
 
     @PostMapping("/")
