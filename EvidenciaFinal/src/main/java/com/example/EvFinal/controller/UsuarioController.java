@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.EvFinal;
+package com.example.EvFinal.controller;
 
+import com.example.EvFinal.entity.Usuario;
+import com.example.EvFinal.repositories.UsuarioRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
