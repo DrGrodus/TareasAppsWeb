@@ -5,129 +5,99 @@
 package com.example.EvFinal.controller;
 
 import com.example.EvFinal.entity.Usuario;
+import com.example.EvFinal.services.UsuarioService;
 import com.example.EvFinal.repositories.UsuarioRepository;
+
+import java.util.List;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.validation.Valid;
+import org.springframework.ui.Model;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
+import org.springframework.http.HttpStatus;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.BindingResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 
 /**
  *
  * @author eber
  */
 @RestController
-//@RequestMapping("/")
-public class UsuarioController {
+public class UsuarioController implements WebMvcConfigurer {
 
-    private final UsuarioRepository usuarioRepository;
-
-    public UsuarioController(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
+    @Autowired
+    private UsuarioService service;
+    
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/index").setViewName("index");
     }
 
+    /* 
+        Aqui se empieza a ejecutar el programa, se revisa si el usuario tiene
+        una sesion activa, sino se le redirigue a la pagina de login, en nuestro caso,
+        la segunda opcion no se usa.
+        Esta pagina de inicio viene siendo index.html, donde veremos los registros de imc
+    */
     @RequestMapping("/")
-    public String Inicio(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println("Esto es inicio");
-        return "index";
-//        out.println("<!DOCTYPE html>\n" +
-//"<html lang= \"es \" >\n" +
-//"    <head>\n" +
-//"        <meta http-equiv= \"Content-Type \" content= \"text/html; charset=UTF-8 \">\n" +
-//"        <title>Inicio</title>\n" +
-//"        <meta name= \"viewport \" content= \"width=device-width, initial-scale=1.0 \">\n" +
-//"    </head>\n" +
-//"    <body>\n" +
-//"        <form:form method= \"GET \" action= \"/LogIn \">\n" +
-//"            <img src= \"img/LibroLogo.png \" alt= \"Logo de Libreria Garcia \">\n" +
-//"            <h1>Libreria Garcia</h1>\n" +
-//"            <label>Usuario: </label><br>\n" +
-//"            <input type= \"text \" name= \"campoUsuario \" placeholder= \"Usuario \"><br><br>\n" +
-//"            <label>Contrasena: </label><br>\n" +
-//"            <input type= \"password \" name= \"campoContra \" placeholder= \"Contrasena \"><br><br>\n" +
-//"            <input type= \"submit \" value= \"Iniciar sesion \"><br><br>\n" +
-//"        </form:form>\n" +
-//"        <form:form method=\"GET\" action=\"/registro\">\n" +
-//"            <input name=\"registro\" type=\"submit\" value=\"No tienes cuenta? Registraste aqui\"/>\n" +
-//"        </form:form>\n" +
-//"\n" +
-//"        <section>\n" +
-//"            <h3>Libros mas populares</h3>\n" +
-//"            <form method= \"POST \" action= \"DetallesLibro \">\n" +
-//"                <article>\n" +
-//"                    <h3>Investigacion</h3>\n" +
-//"                    <img src= \"img/Libro1.png \" alt= \"Libro num1 \"><br>\n" +
-//"                    <input type= \"submit \" value= \"Comprar \" name= \"P1 \" disabled= \"true \">\n" +
-//"                    <label><b>Inicia sesion para comprar</b></label><br>\n" +
-//"                </article><br>\n" +
-//"\n" +
-//"                <article>\n" +
-//"                    <h3>Monstruos</h3>\n" +
-//"                    <img src= \"img/Libro2.png \" alt= \"Libro num2 \"><br>\n" +
-//"                    <input type= \"submit \" value= \"Comprar \" name= \"P2 \" disabled= \"true \">\n" +
-//"                    <label><b>Inicia sesion para comprar</b></label><br>\n" +
-//"                </article><br>\n" +
-//"\n" +
-//"                <article>\n" +
-//"                    <h3>Robots</h3>\n" +
-//"                    <img src= \"img/Libro3.png \" alt= \"Libro num3 \"><br>\n" +
-//"                    <input type= \"submit \" value= \"Comprar \"  name= \"P3 \" disabled= \"true \">\n" +
-//"                    <label><b>Inicia sesion para comprar</b></label><br>\n" +
-//"                </article><br>\n" +
-//"            </form>\n" +
-//"        </section>\n" +
-//"    </body>\n" +
-//"</html>");
-        //return "Inicio";
-    }
-
-    @RequestMapping(value = "/registro", method = RequestMethod.GET)
-    public String registrar(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        PrintWriter out = response.getWriter();
-            return "registro";
+    public String Inicio(HttpSession session, Model model) {
         
-//        out.println("<!DOCTYPE html>\n"
-//                + "<html>\n"
-//                + "    <head>\n"
-//                + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
-//                + "        <title>Registro de usuario</title>\n"
-//                + "    </head>\n"
-//                + "    <body>\n"
-//                + "        <h2>Registrate</h2>\n"
-//                + "        <form method=\"POST\" action=\"RegistroUsuario\">\n"
-//                + "            <label>Nombre: </label><br>\n"
-//                + "            <input type=\"text\" name=\"campoNombre\"><br><br>\n"
-//                + "            <label>Apellidos: </label><br>\n"
-//                + "            <input type=\"text\" name=\"campoApellidos\"><br><br>\n"
-//                + "            <label>Codigo postal: </label><br>\n"
-//                + "            <input type=\"text\" name=\"campoCPostal\"><br><br>\n"
-//                + "            <label>Ciudad: </label><br>\n"
-//                + "            <input type=\"text\" name=\"campoCiudad\"><br><br>\n"
-//                + "            <label>Estado: </label><br>\n"
-//                + "            <input type=\"text\" name=\"campoEstado\"><br><br>\n"
-//                + "            \n"
-//                + "            <input type=\"submit\" value=\"Registrar\">\n"
-//                + "        </form>\n"
-//                + "    </body>\n"
-//                + "</html>");
-        //return "RegistrarUsuario";
+        if(session.getAttribute("tuSesion") != null){
+            List<Usuario> listUsuario = service.listAll();
+            model.addAttribute("listUsuario", listUsuario);
+            return "index";
+        } else {
+//            model.addAttribute("formulario", new Formulario());
+            return "login";
+        }
     }
+    
+    /* 
+        Luego de pulsar el enlace de registro, se nos se llevara a
+        la direccion /registro, donde podremos ingresar datos de registro
+        Esta es registro.html
+    */
+    @RequestMapping("/registro")
+    public String registro(Usuario usuario){
+        return "registro";
+    }
+    
+    /* 
+        Una vez hecho el registro se validan los campos y de ser correctos 
+        se crea una sesion con estos y volvemos a index.html. De lo contrario se señalan los errores.
+    */
+    @PostMapping("/registro")
+    public String checarInfo(@Valid Usuario usuario, BindingResult bindingResult, HttpSession session){
+        if(bindingResult.hasErrors()){
+            return "registro";
+        }
+        return "redirect:/";
+    }
+    
+    @RequestMapping("/login")
+    public String login(HttpSession session) {
+//        session.setAttribute("mySessionAttribute", "sasas");
 
-    @PostMapping("/")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Usuario crearUsuario(@RequestBody Usuario usuario) {
-        return usuarioRepository.save(usuario);
+        // model.addAttribute("listProducts", listProducts);
+        return "redirect:/";
     }
+    
 
-    @GetMapping("/usuarios")
-    public Iterable<Usuario> getUsuario() {
-        return usuarioRepository.findAll();
-    }
+//    @PostMapping("/")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public Usuario crearUsuario(@RequestBody Usuario usuario) {
+//        return usuarioRepository.save(usuario);
+//    }
+
+//    @GetMapping("/usuarios")
+//    public Iterable<Usuario> getUsuario() {
+//        return usuarioRepository.findAll();
+//    }
 }
