@@ -11,7 +11,7 @@
             <p th:text="${session.tuSesion}" th:unless="${session == null}">[...]</p>
             <section>
                 <h3>Libros mas populares</h3>
-                <form method="POST" action="libros">
+                <form method="POST" action="@{/detalles}">
                     <article>
                         <h3>Investigacion</h3>
                         <img src="img/Libro1.png" alt="Libro num1"/><br></br>

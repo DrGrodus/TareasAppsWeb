@@ -88,6 +88,10 @@ public class UsuarioController implements WebMvcConfigurer {
         return "redirect:/";
     }
     
+    @RequestMapping("/detalles")
+    public String detalles(){
+        return "detalles";
+    }
 
 //    @PostMapping("/")
 //    @ResponseStatus(HttpStatus.CREATED)
