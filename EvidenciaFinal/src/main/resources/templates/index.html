@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inicio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-    <center>
-        <p th:text="${session.tuSesion}" th:unless="${session == null}">[...]</p>
+        <center>
+            <p th:text="${session.tuSesion}" th:unless="${session == null}">[...]</p>
+            <section>
+                <h3>Libros mas populares</h3>
+                <form method="POST" action="libros">
+                    <article>
+                        <h3>Investigacion</h3>
+                        <img src="img/Libro1.png" alt="Libro num1"/><br></br>
+                        <input type="submit" value="Comprar" name="P1"/>
 
-<!--        <section>
-            <h3>Libros mas populares</h3>
-            <form method="POST" action="LogIn">
-                <article>
-                    <h3>Investigacion</h3>
-                    <img src="img/Libro1.png" alt="Libro num1"><br>
-                    <input type="submit" value="Comprar" name="P1" disabled="true">
-                    <label><b>Inicia sesion para comprar</b></label><br>
-                </article><br>
+                    </article><br></br>
 
-                <article>
-                    <h3>Monstruos</h3>
-                    <img src="img/Libro2.png" alt="Libro num2"><br>
-                    <input type="submit" value="Comprar" name="P2" disabled="true">
-                    <label><b>Inicia sesion para comprar</b></label><br>
-                </article><br>
+                    <article>
+                        <h3>Monstruos</h3>
+                        <img src="img/Libro2.png" alt="Libro num2"/><br></br>
+                        <input type="submit" value="Comprar" name="P2"/>
+                    </article><br></br>
 
-                <article>
-                    <h3>Robots</h3>
-                    <img src="img/Libro3.png" alt="Libro num3"><br>
-                    <input type="submit" value="Comprar"  name="P3" disabled="true">
-                    <label><b>Inicia sesion para comprar</b></label><br>
-                </article><br>
-            </form>
-        </section>-->
+                    <article>
+                        <h3>Robots</h3>
+                        <img src="img/Libro3.png" alt="Libro num3"/><br></br>
+                        <input type="submit" value="Comprar"  name="P3"/>
+                        <label><b>Inicia sesion para comprar</b></label><br></br>
+                    </article><br></br>
+                </form>
+            </section>
         </center>
     </body>
 </html>
