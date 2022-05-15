@@ -1,6 +1,6 @@
 <%-- 
     Document   : RegistrarUsuario
-    Created on : 6 may 2022, 21:40:51
+    Created on : 21 feb 2022, 20:24:33
     Author     : eber
 --%>
 
@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registro de usuario</title>
+        <title>JSP Page</title>
     </head>
     <body>
         <h2>Registrate</h2>
-        <form method="POST" action="RegistroUsuario">
+        <form method="POST" action="RegistroDeUsuario.do">
             <label>Nombre: </label><br>
             <input type="text" name="campoNombre"><br><br>
             <label>Apellidos: </label><br>
