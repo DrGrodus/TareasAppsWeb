@@ -6,18 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form method="POST" action="LogIn">
-            <img src="img/LibroLogo.png" alt="Logo de Libreria Garcia">
-            <h1>Libreria Garcia</h1>
-            <label>Usuario: </label><br>
-            <input type="text" name="campoUsuario" placeholder="Usuario"><br><br>
-            <label>Contrasena: </label><br>
-            <input type="password" name="campoContra" placeholder="Contrasena"><br><br>
-            <input type="submit" value="Iniciar sesion"><br><br>
-        </form>
-        <p><a title="registro" href="registro">No tienes cuenta? Registraste aqui</a></p>
+    <center>
+        <p th:text="${session.tuSesion}" th:unless="${session == null}">[...]</p>
 
-        <section>
+<!--        <section>
             <h3>Libros mas populares</h3>
             <form method="POST" action="LogIn">
                 <article>
@@ -41,7 +33,8 @@
                     <label><b>Inicia sesion para comprar</b></label><br>
                 </article><br>
             </form>
-        </section>
+        </section>-->
+        </center>
     </body>
 </html>
 

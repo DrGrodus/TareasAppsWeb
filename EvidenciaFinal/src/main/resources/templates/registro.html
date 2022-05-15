@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registro de usuario</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h2>Registro</h2>
+        <form action="#" th:action="@{/registro}" th:object="${usuario}" method="POST">
+            <table border="0">
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" th:field="*{nombre}" name="nombre" /></td>
+                </tr>
+            
+                <tr>
+                    <td>Apellidos:</td>
+                    <td><input type="text" th:field="*{apellidos}" name="apellidos" /></td>
+                </tr>
+                
+                <tr>
+                    <td>Código postal:</td>
+                    <td><input type="text" th:field="*{codigoP}" name="cpostal" /></td>
+                </tr>
+                
+                <tr>
+                    <td>Ciudad:</td>
+                    <td><input type="text" th:field="*{ciudad}" name="ciudad" /></td>
+                </tr>
+                
+                <tr>
+                    <td>Estado:</td>
+                    <td><input type="text" th:field="*{estado}" name="estado" /></td>
+                </tr>
+                
+                <tr>
+                    <td>Nombre de usuario:</td>
+                    <td><input type="text" th:field="*{userName}" name="usuario"/></td>
+                </tr>
+                
+                <tr>
+                    <td>Contrasena:</td>
+                    <td><input type="password" th:field="*{password}" name="contrasena"/></td>
+                </tr>
+                
+                <tr>
+                    <td><input type="submit" value="Registrar" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

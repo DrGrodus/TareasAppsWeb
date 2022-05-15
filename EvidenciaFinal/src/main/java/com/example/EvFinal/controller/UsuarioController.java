@@ -43,7 +43,6 @@ public class UsuarioController implements WebMvcConfigurer {
     /* 
         Aqui se empieza a ejecutar el programa, se revisa si el usuario tiene
         una sesion activa, sino se le redirigue a la pagina de login, en nuestro caso,
-        la segunda opcion no se usa.
         Esta pagina de inicio viene siendo index.html, donde veremos los registros de imc
     */
     @RequestMapping("/")
